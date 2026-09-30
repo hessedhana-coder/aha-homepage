@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="춘천 영어원서 기반 1:1 개별 수업, 아하잉글리쉬. 읽고 이해하고 생각하며, 자신의 언어로 표현합니다.">
+<meta property="og:title" content="아하잉글리쉬 | AHA ENGLISH">
+<meta property="og:description" content="아이의 영어를 넘어, 아이의 배움을 봅니다. 영어원서 기반 1:1 개별 수업 · 춘천">
+<meta property="og:image" content="img/hero-main.jpg">
+<link rel="icon" href="img/aha-logo.png">
+<title>아하잉글리쉬 | AHA ENGLISH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: two layers. Layer 1 = main screen (hero + the 9 button images). Layer 2 = one representative screen per menu (our page images) with real buttons, each leading on to the blog. Single light brand look by choice. */
+:root{
+  --paper:#FBF8F2; --card:#FFFFFF; --line:#ECE4D6;
+  --navy:#1B3A6B; --green:#15594E; --deep:#134B43; --orange:#C65A26;
+  --ink:#1C2B33; --muted:#5B6770;
+  --sans:'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;word-break:keep-all}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+h1{margin:0;color:var(--navy);letter-spacing:-.02em;line-height:1.35;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1000px;margin:0 auto;padding-inline:20px}
+:focus-visible{outline:2.5px solid var(--orange);outline-offset:3px;border-radius:8px}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line)}
+.top .wrap{height:64px;display:flex;align-items:center;gap:20px}
+.logo img{height:38px;width:auto}
+.nav{margin:0 0 0 auto;padding:0;display:flex;align-items:center;gap:2px;list-style:none}
+.nav>li{position:relative}
+.nav a.m{display:flex;align-items:center;gap:4px;height:64px;padding:0 11px;font-weight:500;font-size:14.5px;color:#3E4A52;border-bottom:2px solid transparent}
+.nav a.m:hover{color:var(--green)}
+.nav a.m.on{color:var(--green);font-weight:700;border-bottom-color:var(--green)}
+.sub{position:absolute;top:58px;left:0;min-width:200px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 30px rgba(27,58,107,.12);padding:8px;opacity:0;visibility:hidden;transform:translateY(-4px);transition:.16s}
+.has:hover .sub,.has:focus-within .sub{opacity:1;visibility:visible;transform:none}
+.sub a{display:flex;flex-direction:column;padding:9px 14px;border-radius:10px;line-height:1.45}
+.sub a:hover{background:var(--paper)}
+.sub b{font-size:14px;letter-spacing:.06em}
+.sub span{font-size:12.5px;color:var(--muted)}
+.cta{height:40px;padding:0 18px;border-radius:999px;background:var(--orange);color:#fff;font-weight:700;font-size:14px;display:inline-flex;align-items:center;white-space:nowrap}
+.cta:hover{background:#B04E20}
+.burger{display:none;margin-left:auto;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:var(--card);cursor:pointer;align-items:center;justify-content:center}
+.drawer{display:none}
+
+/* layer 1: main */
+.hero{position:relative;overflow:hidden;background:var(--paper)}
+.hero-img{position:absolute;right:0;top:0;bottom:0;width:60%;background:url(img/hero-main.jpg) 40% center/cover}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--paper) 0%,rgba(251,248,242,.55) 16%,rgba(251,248,242,0) 40%)}
+.hero .wrap{position:relative;padding-block:78px 84px}
+.hero-copy{max-width:440px;display:flex;flex-direction:column;gap:16px}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.24em;color:var(--green);display:flex;align-items:center;gap:12px}
+.eyebrow::after{content:"";width:40px;height:1.5px;background:currentColor}
+.hero h1{font-size:clamp(30px,4.2vw,44px);font-weight:700}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero .lead{font-size:18px;color:#4A5660}
+.badge{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;padding:9px 18px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-weight:600;font-size:15px;color:var(--navy);box-shadow:0 2px 10px rgba(27,58,107,.06)}
+.badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--orange)}
+
+.menuband{background:#fff;border-top:1px solid var(--line)}
+.menu{padding-block:30px 34px;display:flex;flex-direction:column;gap:12px}
+.big{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.small{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.menu a{display:block;border-radius:18px;transition:transform .18s,filter .18s}
+.menu a:hover{transform:translateY(-3px);filter:drop-shadow(0 8px 14px rgba(27,58,107,.12))}
+.menu img{width:100%;height:auto}
+.small a{border-radius:999px}
+
+.infobar{background:var(--deep);color:#DCE9E5;font-size:14px}
+.infobar .wrap{padding-block:16px;display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center}
+.infobar b{color:#fff;font-weight:700}
+.infobar span+span::before{content:"";display:inline-block;width:1px;height:12px;background:rgba(255,255,255,.3);margin-right:22px;vertical-align:-1px}
+
+/* layer 2: representative screens */
+.page{padding-block:30px 56px}
+.crumb{font-size:14px;color:var(--muted);margin-bottom:14px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.crumb a{color:var(--green);font-weight:600}
+.frame{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 30px rgba(27,58,107,.08);background:var(--card)}
+.frame img{width:100%;height:auto}
+.hot{position:absolute;border-radius:16px;transition:background .15s,box-shadow .15s}
+.hot:hover{background:rgba(27,58,107,.05);box-shadow:inset 0 0 0 2px rgba(198,90,38,.55)}
+.hot.home{border-radius:999px}
+.actions{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px}
+.btn{height:46px;padding:0 22px;border-radius:999px;font-weight:700;font-size:14.5px;display:inline-flex;align-items:center;gap:8px;border:1.5px solid transparent}
+.btn.navy{background:var(--navy);color:#fff}
+.btn.orange{background:var(--orange);color:#fff}
+.btn.green{background:var(--green);color:#fff}
+.btn.line{border-color:var(--navy);color:var(--navy);background:var(--card)}
+.btn:hover{filter:brightness(1.08)}
+.hint{margin-top:10px;font-size:13px;color:var(--muted)}
+
+[data-view]{display:none}
+[data-view].show{display:block}
+
+footer{background:#0E3A34;color:#9FC6BC;font-size:13px}
+footer .wrap{padding-block:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .nav,.top .cta{display:none}
+  .burger{display:flex}
+  .drawer{position:fixed;inset:64px 0 auto 0;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 16px 30px rgba(27,58,107,.12);padding:8px 20px 20px;max-height:calc(100vh - 64px);overflow:auto}
+  .drawer.open{display:block}
+  .drawer a,.drawer summary{display:block;padding:13px 4px;border-bottom:1px solid var(--line);font-weight:600;color:var(--navy);cursor:pointer}
+  .drawer details a{padding-left:20px;font-weight:500;color:#3E4A52}
+  .drawer .cta{display:flex;justify-content:center;margin-top:14px;border:0;color:#fff}
+  .hero .wrap{padding-block:0 30px}
+  .hero-img{position:relative;width:auto;height:260px;margin-inline:0}
+  .hero-img::after{background:linear-gradient(0deg,var(--paper) 0%,rgba(251,248,242,0) 40%)}
+  .big{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .hero-copy{max-width:none}
+  .eyebrow{letter-spacing:.14em;font-size:11.5px}
+  .eyebrow::after{display:none}
+  .small{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .infobar span+span::before{display:none}
+}
+@media (max-width:480px){
+  .wrap{padding-inline:16px}
+  .big{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .big a:last-child{grid-column:1/-1;width:calc(50% - 6px);justify-self:center}
+  .btn{flex:1 1 auto;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#home" aria-label="아하잉글리쉬 메인"><img src="img/aha-logo.png" alt="AHA ENGLISH · READ · THINK · GROW"></a>
+    <ul class="nav" aria-label="주 메뉴">
+      <li><a class="m" data-go="about" href="#about">AHA 소개</a></li>
+      <li class="has">
+        <a class="m" data-go="education" href="#education" aria-haspopup="true">AHA의 영어교육 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="sub">
+          <a href="#reading"><b style="color:var(--navy)">READING</b><span>읽고 이해하고 생각하는 힘</span></a>
+          <a href="#writing"><b style="color:var(--orange)">WRITING</b><span>생각을 자신의 글로 표현하는 힘</span></a>
+        </div>
+      </li>
+      <li><a class="m" data-go="growth" href="#growth">성장 이야기</a></li>
+      <li><a class="m" data-go="insight" href="#insight">AHA INSIGHT</a></li>
+      <li><a class="m" href="https://blog.naver.com/PostList.naver?blogId=ahaenglishlibrary&amp;categoryNo=1" target="_blank" rel="noopener">아하 소식</a></li>
+    </ul>
+    <a class="cta" href="https://forms.gle/xHmDvSHY1ARHawyf6" target="_blank" rel="noopener">상담 신청</a>
+    <button class="burger" id="burger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="drawer">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B3A6B" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <nav class="drawer" id="drawer" aria-label="모바일 메뉴">
+    <a href="#home">HOME</a>
+    <a href="#about">AHA 소개</a>
+    <details>
+      <summary>AHA의 영어교육</summary>
+      <a href="#education">AHA의 영어교육</a>
+      <a href="#reading">READING ROADMAP</a>
+      <a href="#writing">WRITING ROADMAP</a>
+    </details>
+    <a href="#growth">성장 이야기</a>
+    <a href="#insight">AHA INSIGHT</a>
+    <a href="https://blog.naver.com/PostList.naver?blogId=ahaenglishlibrary&amp;categoryNo=1" target="_blank" rel="noopener">아하 소식</a>
+    <a class="cta" href="https://forms.gle/xHmDvSHY1ARHawyf6" target="_blank" rel="noopener">상담 신청</a>
+  </nav>
+</header>
+
+<main>
+  <!-- ===== LAYER 1 : 메인 화면 ===== -->
+  <div data-view="home">
+    <section class="hero" aria-label="아하잉글리쉬">
+      <div class="hero-img" role="img" aria-label="그림책을 읽는 아이"></div>
+      <div class="wrap">
+        <div class="hero-copy">
+          <div class="eyebrow">AHA ENGLISH · READ · THINK · GROW</div>
+          <h1>아이의 영어를 넘어,<br><em>아이의 배움</em>을 봅니다.</h1>
+          <p class="lead">읽고 이해하고 생각하며,<br>자신의 언어로 표현합니다.</p>
+          <div class="badge">영어원서 기반 1:1 개별 수업 · 춘천</div>
+        </div>
+      </div>
+    </section>
+    <div class="menuband"><nav class="wrap menu" aria-label="메뉴 버튼">
+      <div class="big">
+        <a href="#about"><img src="img/btn/b1.png" alt="AHA 소개" width="170" height="153"></a>
+        <a href="#education"><img src="img/btn/b2.png" alt="AHA의 영어교육" width="170" height="153"></a>
+        <a href="#growth"><img src="img/btn/b3.png" alt="성장 이야기" width="170" height="153"></a>
+        <a href="#insight"><img src="img/btn/b4.png" alt="AHA INSIGHT" width="170" height="153"></a>
+        <a href="https://forms.gle/xHmDvSHY1ARHawyf6" target="_blank" rel="noopener"><img src="img/btn/b5.png" alt="상담 신청" width="170" height="153"></a>
+      </div>
+      <div class="small">
+        <a href="https://blog.naver.com/PostList.naver?blogId=ahaenglishlibrary&amp;categoryNo=1" target="_blank" rel="noopener"><img src="img/btn/p1.png" alt="아하 소식" width="170" height="48"></a>
+        <a href="https://map.naver.com/p/entry/place/1913586195" target="_blank" rel="noopener"><img src="img/btn/p2.png" alt="오시는 길" width="170" height="48"></a>
+        <a href="https://pf.kakao.com/_TxgAxiX" target="_blank" rel="noopener"><img src="img/btn/p3.png" alt="카카오톡 문의" width="170" height="48"></a>
+        <a href="https://www.instagram.com/ahaenglishlibrary" target="_blank" rel="noopener"><img src="img/btn/p4.png" alt="인스타그램" width="170" height="48"></a>
+      </div>
+    </nav></div>
+    <div class="infobar">
+      <div class="wrap">
+        <span><b>아하잉글리쉬</b></span>
+        <span>강원특별자치도 춘천시 퇴계농공로 16, 804</span>
+        <span>010-9403-8798</span>
+        <span>학원등록번호 제1889호</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== LAYER 2 : 대표 화면 ===== -->
+  <section class="wrap page" data-view="about" aria-label="AHA 소개">
+    <div class="crumb"><a href="#home">HOME</a> › AHA 소개</div>
+    <div class="frame">
+      <img src="img/page/about.jpg" alt="AHA 소개 — 아이의 영어만 보지 않습니다. 아이가 배우는 과정을 함께 봅니다." width="1932" height="1200">
+      <a class="hot home" href="#home" aria-label="HOME" style="left:86.2%;top:92.2%;width:9.6%;height:5.8%"></a>
+    </div>
+    <div class="actions">
+      <a class="btn green" href="https://blog.naver.com/ahaenglishlibrary/224426664911" target="_blank" rel="noopener">AHA 소개 글 자세히 보기 →</a>
+      <a class="btn orange" href="https://forms.gle/xHmDvSHY1ARHawyf6" target="_blank" rel="noopener">상담 신청</a>
+      <a class="btn line" href="#home">HOME</a>
+    </div>
+  </section>
+
+  <section class="wrap page" data-view="education" aria-label="AHA의 영어교육">
+    <div class="crumb"><a href="#home">HOME</a> › AHA의 영어교육</div>
+    <div class="frame">
+      <img src="img/page/education.jpg" alt="AHA의 영어교육 — 아이의 영어는 두 가지 힘으로 성장합니다. READING과 WRITING" width="1932" height="1200">
+      <a class="hot" href="#reading" aria-label="READING ROADMAP 보기" style="left:4.1%;top:27.8%;width:44.8%;height:58.7%"></a>
+      <a class="hot" href="#writing" aria-label="WRITING ROADMAP 보기" style="left:51%;top:27.8%;width:44.8%;height:58.7%"></a>
+      <a class="hot home" href="#home" aria-label="HOME" style="left:86.2%;top:92.2%;width:9.6%;height:5.8%"></a>
+    </div>
+    <div class="actions">
+      <a class="btn navy" href="#reading">READING ROADMAP →</a>
+      <a class="btn orange" href="#writing">WRITING ROADMAP →</a>
+      <a class="btn line" href="https://blog.naver.com/ahaenglishlibrary/224426753367" target="_blank" rel="noopener">블로그 글로 보기</a>
+      <a class="btn line" href="#home">HOME</a>
+    </div>
+    <p class="hint">READING, WRITING 사진을 눌러도 각 로드맵으로 이동합니다.</p>
+  </section>
+
+  <section class="wrap page" data-view="reading" aria-label="READING ROADMAP">
+    <div class="crumb"><a href="#home">HOME</a> › <a href="#education">AHA의 영어교육</a> › READING</div>
+    <div class="frame">
+      <img src="img/page/reading.jpg" alt="READING ROADMAP — 읽는 힘은 깊이 있는 이해로 자랍니다. 깊이 읽고, 다양하게 읽고, 내 것으로 익힙니다." width="1932" height="1200">
+      <a class="hot home" href="#home" aria-label="HOME" style="left:86.2%;top:92.2%;width:9.6%;height:5.8%"></a>
+    </div>
+    <div class="actions">
+      <a class="btn navy" href="https://blog.naver.com/ahaenglishlibrary/224426753367" target="_blank" rel="noopener">READING 글 자세히 보기 →</a>
+      <a class="btn orange" href="#writing">WRITING ROADMAP</a>
+      <a class="btn line" href="#education">AHA의 영어교육</a>
+      <a class="btn line" href="#home">HOME</a>
+    </div>
+  </section>
+
+  <section class="wrap page" data-view="writing" aria-label="WRITING ROADMAP">
+    <div class="crumb"><a href="#home">HOME</a> › <a href="#education">AHA의 영어교육</a> › WRITING</div>
+    <div class="frame">
+      <img src="img/page/writing.jpg" alt="WRITING ROADMAP — 아이 안의 생각이 자신의 글이 됩니다. 생각을 꺼내고, 조직하고, 글로 펼칩니다." width="1932" height="1200">
+      <a class="hot home" href="#home" aria-label="HOME" style="left:86.2%;top:92.2%;width:9.6%;height:5.8%"></a>
+    </div>
+    <div class="actions">
+      <a class="btn orange" href="https://blog.naver.com/ahaenglishlibrary/224426753367" target="_blank" rel="noopener">WRITING 글 자세히 보기 →</a>
+      <a class="btn navy" href="#reading">READING ROADMAP</a>
+      <a class="btn line" href="#education">AHA의 영어교육</a>
+      <a class="btn line" href="#home">HOME</a>
+    </div>
+  </section>
+
+  <section class="wrap page" data-view="growth" aria-label="성장 이야기">
+    <div class="crumb"><a href="#home">HOME</a> › 성장 이야기</div>
+    <div class="frame">
+      <img src="img/page/growth.jpg" alt="성장 이야기 — 모든 아이는 저마다의 속도로 자랍니다." width="1932" height="1200">
+      <a class="hot home" href="#home" aria-label="HOME" style="left:86.2%;top:92.2%;width:9.6%;height:5.8%"></a>
+    </div>
+    <div class="actions">
+      <a class="btn green" href="https://blog.naver.com/ahaenglishlibrary/224426791299" target="_blank" rel="noopener">성장 이야기 글 보기 →</a>
+      <a class="btn line" href="https://blog.naver.com/PostList.naver?blogId=ahaenglishlibrary&amp;categoryNo=25" target="_blank" rel="noopener">이야기 전체 목록</a>
+      <a class="btn orange" href="https://forms.gle/xHmDvSHY1ARHawyf6" target="_blank" rel="noopener">상담 신청</a>
+      <a class="btn line" href="#home">HOME</a>
+    </div>
+  </section>
+
+  <section class="wrap page" data-view="insight" aria-label="AHA INSIGHT">
+    <div class="crumb"><a href="#home">HOME</a> › AHA INSIGHT</div>
+    <div class="frame">
+      <img src="img/page/insight.jpg" alt="AHA INSIGHT — 아이의 행동보다, 그 안에서 일어나는 배움을 봅니다." width="1932" height="1200">
+      <a class="hot home" href="#home" aria-label="HOME" style="left:86.2%;top:92.2%;width:9.6%;height:5.8%"></a>
+    </div>
+    <div class="actions">
+      <a class="btn navy" href="https://blog.naver.com/ahaenglishlibrary/224426832668" target="_blank" rel="noopener">INSIGHT 글 읽기 →</a>
+      <a class="btn line" href="https://blog.naver.com/PostList.naver?blogId=ahaenglishlibrary&amp;categoryNo=27&amp;parentCategoryNo=27" target="_blank" rel="noopener">INSIGHT 전체 목록</a>
+      <a class="btn orange" href="https://forms.gle/xHmDvSHY1ARHawyf6" target="_blank" rel="noopener">상담 신청</a>
+      <a class="btn line" href="#home">HOME</a>
+    </div>
+  </section>
+</main>
+
+<footer id="foot">
+  <div class="wrap">
+    <span>아하잉글리쉬 · AHA ENGLISH · READ · THINK · GROW</span>
+    <a href="https://blog.naver.com/ahaenglishlibrary" target="_blank" rel="noopener">네이버 블로그 →</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var views=document.querySelectorAll('[data-view]');
+  var names=[].map.call(views,function(v){return v.getAttribute('data-view')});
+  var parent={reading:'education',writing:'education'};
+  function show(){
+    var h=(location.hash||'').replace('#','');
+    if(names.indexOf(h)<0) h='home';
+    views.forEach(function(v){v.classList.toggle('show',v.getAttribute('data-view')===h)});
+    document.querySelectorAll('.nav a.m[data-go]').forEach(function(a){
+      var g=a.getAttribute('data-go'); a.classList.toggle('on',g===h||g===parent[h]);
+    });
+    document.getElementById('foot').hidden=(h==='home');
+    window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange',show); show();
+  var b=document.getElementById('burger'), d=document.getElementById('drawer');
+  b.addEventListener('click',function(){var o=d.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  d.addEventListener('click',function(e){if(e.target.tagName==='A'){d.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+})();
+</script>
+
+</body>
+</html>
